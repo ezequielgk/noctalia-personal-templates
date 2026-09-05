@@ -47,7 +47,7 @@ EOF
 
     # Close (Error)
     create_square_svg "close-active.svg" "$C_CLOSE"
-    create_square_svg "close_hover-active.svg" "$C_CLOSE" # Using identical for hover as requested
+    create_square_svg "close_hover-active.svg" "$C_CLOSE"
     create_square_svg "close-inactive.svg" "$C_INACT"
     create_square_svg "close_hover-inactive.svg" "$C_INACT"
 
