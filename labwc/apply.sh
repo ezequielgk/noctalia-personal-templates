@@ -34,8 +34,8 @@ if [ -f "$source_theme" ]; then
     C_INACT=$(get_color "_meta.btn.inactive" "#4D4D4D")
     
     # Insert snapping overlay colors
-    echo "snapping.overlay.region.bg.color: ${C_MAX}33" >> "$theme_file"
-    echo "snapping.overlay.edge.bg.color: ${C_MAX}33" >> "$theme_file"
+    echo "snapping.overlay.region.bg.color: ${C_MAX} 40" >> "$theme_file"
+    echo "snapping.overlay.edge.bg.color: ${C_MAX} 40" >> "$theme_file"
     echo "snapping.overlay.region.border.color: ${C_MAX}" >> "$theme_file"
     echo "snapping.overlay.edge.border.color: ${C_MAX}" >> "$theme_file"
 
@@ -54,7 +54,7 @@ EOF
 
     # Close (Error)
     create_square_svg "close-active.svg" "$C_CLOSE"
-    create_square_svg "close_hover-active.svg" "$C_CLOSE"
+    create_square_svg "close_hover-active.svg" "$C_CLOSE" # Using identical for hover as requested
     create_square_svg "close-inactive.svg" "$C_INACT"
     create_square_svg "close_hover-inactive.svg" "$C_INACT"
 
