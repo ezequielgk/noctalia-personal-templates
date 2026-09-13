@@ -32,7 +32,14 @@ if [ -f "$source_theme" ]; then
     C_MIN=$(get_color "_meta.btn.min" "#FFBD2E")
     C_MAX=$(get_color "_meta.btn.max" "#27C93F")
     C_INACT=$(get_color "_meta.btn.inactive" "#4D4D4D")
+    
+    # Insert snapping overlay colors
+    echo "snapping.overlay.region.bg.color: ${C_MAX}33" >> "$theme_file"
+    echo "snapping.overlay.edge.bg.color: ${C_MAX}33" >> "$theme_file"
+    echo "snapping.overlay.region.border.color: ${C_MAX}" >> "$theme_file"
+    echo "snapping.overlay.edge.border.color: ${C_MAX}" >> "$theme_file"
 
+    # We remove the _meta variables from the final themerc as Openbox might complain
     sed -i '/^_meta.btn/d' "$theme_file" || true
 
     create_square_svg() {
