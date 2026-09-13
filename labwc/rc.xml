@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<!-- Labwc configuration -->
+<labwc_config>
+  <core>
+    <gap>10</gap>
+  </core>
+
+  <!-- Window Switcher -->
+  <windowSwitcher preview="no" outlines="yes">
+    <osd style="thumbnail"/>
+  </windowSwitcher>
+
+  <keyboard>
+    <default />
+    <repeatRate>50</repeatRate>
+    <repeatDelay>300</repeatDelay>
+
+    <!-- Base Binds -->
+    <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
+    <keybind key="A-w"><action name="Execute" command="/home/ezequiel/.local/bin/helium" /></keybind>
+    <keybind key="W-w"><action name="Execute" command="librewolf" /></keybind>
+    <keybind key="W-e"><action name="Execute" command="pcmanfm-qt" /></keybind>
+    <keybind key="W-S-v"><action name="Execute" command="foot -e hx" /></keybind>
+    <keybind key="W-S-o"><action name="Execute" command="foot -e /home/ezequiel/.nix-profile/bin/concord" /></keybind>
+    <keybind key="W-q"><action name="Close" /></keybind>
+    <keybind key="W-S-r"><action name="Reconfigure" /></keybind>
+
+    <keybind key="W-C-s"><action name="Execute" command="/home/ezequiel/.config/sway/scripts/screenrecord-area.sh" /></keybind>
+    <keybind key="C-p"><action name="Execute" command="/home/ezequiel/.config/sway/scripts/screenrecord-full.sh" /></keybind>
+    <keybind key="W-S-s"><action name="Execute" command="/home/ezequiel/.config/sway/scripts/screenshot-area.sh" /></keybind>
+    <keybind key="W-p"><action name="Execute" command="/home/ezequiel/.config/sway/scripts/screenshot-full.sh" /></keybind>
+    <keybind key="W-space"><action name="Execute" command="noctalia msg panel-toggle launcher" /></keybind>
+    <keybind key="W-s"><action name="Execute" command="noctalia msg panel-toggle control-center" /></keybind>
+    <keybind key="W-comma"><action name="Execute" command="noctalia msg settings-toggle" /></keybind>
+    <keybind key="W-S-t"><action name="Execute" command="noctalia msg panel-toggle wallpaper" /></keybind>
+    <keybind key="W-S-b"><action name="Execute" command="noctalia msg bar-toggle" /></keybind>
+    <keybind key="C-A-Delete"><action name="Execute" command="noctalia msg panel-toggle session" /></keybind>
+    <keybind key="C-W-r"><action name="Execute" command="noctalia msg config-reload" /></keybind>
+    <keybind key="W-Tab"><action name="NextWindow" /></keybind>
+
+    <!-- Volume & Media -->
+    <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="noctalia msg volume-up" /></keybind>
+    <keybind key="XF86AudioLowerVolume"><action name="Execute" command="noctalia msg volume-down" /></keybind>
+    <keybind key="XF86AudioMute"><action name="Execute" command="noctalia msg volume-mute" /></keybind>
+    <keybind key="XF86MonBrightnessUp"><action name="Execute" command="noctalia msg brightness-up" /></keybind>
+    <keybind key="XF86MonBrightnessDown"><action name="Execute" command="noctalia msg brightness-down" /></keybind>
+    <keybind key="XF86AudioPlay"><action name="Execute" command="noctalia msg media toggle" /></keybind>
+    <keybind key="XF86AudioNext"><action name="Execute" command="noctalia msg media next" /></keybind>
+    <keybind key="XF86AudioPrev"><action name="Execute" command="noctalia msg media previous" /></keybind>
+    <keybind key="XF86AudioStop"><action name="Execute" command="noctalia msg media stop" /></keybind>
+
+    <!-- Toggle Window Decorations for all windows on CURRENT desktop -->
+    <keybind key="W-S-x">
+      <action name="ForEach">
+        <query>
+          <desktop>current</desktop>
+        </query>
+        <then>
+          <action name="ToggleDecorations" />
+        </then>
+      </action>
+    </keybind>
+
+    <!-- Window State -->
+    <keybind key="W-f"><action name="ToggleFullscreen" /></keybind>
+    <keybind key="W-A-space"><action name="ToggleMaximize" /></keybind>
+
+    <!-- Focus -->
+    <keybind key="A-Tab"><action name="NextWindow" /></keybind>
+    <keybind key="A-S-Tab"><action name="PreviousWindow" /></keybind>
+
+    <!-- Snapping -->
+    <keybind key="W-Left"><action name="ToggleSnapToEdge" direction="left" /></keybind>
+    <keybind key="W-Right"><action name="ToggleSnapToEdge" direction="right" /></keybind>
+    <keybind key="W-Up"><action name="ToggleSnapToEdge" direction="up" /></keybind>
+    <keybind key="W-Down"><action name="ToggleSnapToEdge" direction="down" /></keybind>
+    <keybind key="W-h"><action name="ToggleSnapToEdge" direction="left" /></keybind>
+    <keybind key="W-l"><action name="ToggleSnapToEdge" direction="right" /></keybind>
+    <keybind key="W-k"><action name="ToggleSnapToEdge" direction="up" /></keybind>
+    <keybind key="W-j"><action name="ToggleSnapToEdge" direction="down" /></keybind>
+
+    <!-- Resizing -->
+    <keybind key="C-A-h"><action name="ResizeRelative" left="10" /></keybind>
+    <keybind key="C-A-l"><action name="ResizeRelative" right="10" /></keybind>
+    <keybind key="C-A-k"><action name="ResizeRelative" top="10" /></keybind>
+    <keybind key="C-A-j"><action name="ResizeRelative" bottom="10" /></keybind>
+    <keybind key="C-A-Left"><action name="ResizeRelative" left="10" /></keybind>
+    <keybind key="C-A-Right"><action name="ResizeRelative" right="10" /></keybind>
+    <keybind key="C-A-Up"><action name="ResizeRelative" top="10" /></keybind>
+    <keybind key="C-A-Down"><action name="ResizeRelative" bottom="10" /></keybind>
+
+    <!-- Workspaces -->
+    <keybind key="W-C-Left"><action name="GoToDesktop" to="left" /></keybind>
+    <keybind key="W-C-Right"><action name="GoToDesktop" to="right" /></keybind>
+
+    <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="W-3"><action name="GoToDesktop" to="3" /></keybind>
+    <keybind key="W-4"><action name="GoToDesktop" to="4" /></keybind>
+    <keybind key="W-5"><action name="GoToDesktop" to="5" /></keybind>
+    <keybind key="W-6"><action name="GoToDesktop" to="6" /></keybind>
+    <keybind key="W-7"><action name="GoToDesktop" to="7" /></keybind>
+    <keybind key="W-8"><action name="GoToDesktop" to="8" /></keybind>
+    <keybind key="W-9"><action name="GoToDesktop" to="9" /></keybind>
+    <keybind key="W-0"><action name="GoToDesktop" to="10" /></keybind>
+
+    <keybind key="W-S-1"><action name="SendToDesktop" to="1" /></keybind>
+    <keybind key="W-S-2"><action name="SendToDesktop" to="2" /></keybind>
+    <keybind key="W-S-3"><action name="SendToDesktop" to="3" /></keybind>
+    <keybind key="W-S-4"><action name="SendToDesktop" to="4" /></keybind>
+    <keybind key="W-S-5"><action name="SendToDesktop" to="5" /></keybind>
+    <keybind key="W-S-6"><action name="SendToDesktop" to="6" /></keybind>
+    <keybind key="W-S-7"><action name="SendToDesktop" to="7" /></keybind>
+    <keybind key="W-S-8"><action name="SendToDesktop" to="8" /></keybind>
+    <keybind key="W-S-9"><action name="SendToDesktop" to="9" /></keybind>
+    <keybind key="W-S-0"><action name="SendToDesktop" to="10" /></keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+  </mouse>
+
+  <libinput>
+    <device category="default">
+      <naturalScroll>no</naturalScroll>
+      <accelProfile>flat</accelProfile>
+      <pointerSpeed>-0.66</pointerSpeed>
+    </device>
+    <device category="touchpad">
+      <tap>yes</tap>
+      <naturalScroll>yes</naturalScroll>
+      <clickMethod>clickfinger</clickMethod>
+      <pointerSpeed>0.3</pointerSpeed>
+      <disableWhileTyping>yes</disableWhileTyping>
+      <middleEmulation>yes</middleEmulation>
+    </device>
+  </libinput>
+
+  <desktops number="10">
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
+      <name>6</name>
+      <name>7</name>
+      <name>8</name>
+      <name>9</name>
+      <name>10</name>
+    </names>
+  </desktops>
+
+  <windowRules>
+    <windowRule identifier="dev.zed.Zed" serverDecoration="yes" />
+    <windowRule identifier="gearlever" serverDecoration="yes" />
+  </windowRules>
+  
+  <theme>
+    <titlebar>
+      <layout>icon:iconify,max,close</layout>
+    </titlebar>
+    <name>noctalia</name>
+    <cornerRadius>0</cornerRadius>
+    <keepBorder>yes</keepBorder>
+  </theme>
+</labwc_config>
